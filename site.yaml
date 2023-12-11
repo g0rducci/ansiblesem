@@ -1,2 +1,11 @@
-non_boolean: "yes"
-other_string: "False"
+- name: Instalar Nginx
+  hosts: all
+  become: true
+  tasks:
+    - name: Actualizar caché de apt
+      apt:
+        update_cache: yes
+    - name: Instalar Nginx
+      apt:
+        name: nginx
+        state: present
