@@ -9,3 +9,23 @@
       apt:
         name: nginx
         state: present
+        
+- name: Actualizar seguridad en servidores Ubuntu
+  hosts: all
+  become: true
+
+  tasks:
+    - name: Actualizar lista de paquetes
+      apt:
+        update_cache: yes
+        cache_valid_time: 3600
+
+    - name: Actualizar paquetes de seguridad
+      apt:
+        upgrade: safe
+      register: update_result
+
+    - name: Verificar si se realizaron actualizaciones
+      debug:
+        msg: "Se realizaron actualizaciones: {{ update_result.packages | length }}"
+      when: update_result.packages | length > 0
