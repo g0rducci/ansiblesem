@@ -24,8 +24,3 @@
       apt:
         upgrade: safe
       register: update_result
-
-    - name: Verificar si se realizaron actualizaciones
-      debug:
-        msg: "Se realizaron actualizaciones: {{ update_result.packages | length }}"
-      when: update_result.packages | length > 0
