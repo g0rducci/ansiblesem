@@ -4,7 +4,7 @@
   tasks:
     - name: Actualizar caché de apt
       apt:
-        update_cache: yes,
+        update_cache: yes
     - name: Instalar Nginx
       apt:
         name: nginx
@@ -21,6 +21,11 @@
         cache_valid_time: 3600
 
     - name: Actualizar paquetes de seguridad
+      apt:
+        upgrade: safe
+      register: update_result
+
+      - name: Aplicar script clonado
       apt:
         upgrade: safe
       register: update_result
