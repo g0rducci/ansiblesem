@@ -25,7 +25,7 @@
         upgrade: safe
       register: update_result
 
-      - name: Aplicar script clonado
+    - name: Aplicar script clonado
       apt:
         upgrade: safe
       register: update_result
