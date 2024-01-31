@@ -1,7 +1,7 @@
 - hosts: all
   tasks:
     - name: Run a command under cmd
-      win_shell: mkdir C:\temp
+      win_shell: mkdir C:\videosc5
       args:
         executable: cmd.exe
     - name: Run an executable using win_command
