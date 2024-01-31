@@ -1,7 +1,7 @@
 - hosts: all
   tasks:
     - name: Run a command under cmd
-      win_shell: rclone copy --progress --buffer-size=16M C:\Users\Administrator\videosc5 AWS_S3:bucketdatasync2024/ --log-file c:\Users\Administrator\sync_files3.txt
+      win_shell: rclone copy --progress --buffer-size=16M C:\Users\Administrator\videosc5 AWS_S3:c2pruebayair2023/test --log-file c:\Users\Administrator\sync_files3.txt
       args:
         executable: cmd.exe
     - name: Run an executable using win_command
