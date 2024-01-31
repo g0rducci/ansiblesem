@@ -1,7 +1,7 @@
 - hosts: all
   tasks:
     - name: Run a command under cmd
-      win_shell: rclone copy --progress --buffer-size=16M C:\Users\Administrator\c5video c2pruebayair2023:c2pruebayair2023/test --log-file c:\Users\Administrator\sync_files2.txt>
+      win_shell: rclone copy --progress --buffer-size=16M C:\Users\Administrator\c5video c2pruebayair2023:c2pruebayair2023/test --log-file c:\Users\Administrator\sync_files2.txt
       args:
         executable: cmd.exe
     - name: Run an executable using win_command
